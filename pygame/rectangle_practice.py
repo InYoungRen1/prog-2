@@ -17,9 +17,10 @@ class Rectangle():
         self.y = 0
 
         self.width = 100
-        self.height = 100
+        self.height = 10
 
-        self.colour = (0, 255, 0)
+        self.colour = (255, 255, 0)
+
 
 def main():
     pygame.init()
@@ -34,6 +35,12 @@ def main():
     clock = pygame.time.Clock()
 
     rectangle = Rectangle()
+    triangle = Rectangle()
+    triangle.width = 100  
+    # TODO: create another rectangle
+    #   CHANGE ITS PROPERTIES
+    #   REMINDER USE .NOTATION TO CHANGE PROPERTIES
+    #    i.e. rectangle_two.x = 100
 
     # ----- MAIN LOOP
     while not done:
@@ -47,6 +54,9 @@ def main():
         # ----- DRAW
         screen.fill(BLACK)
         pygame.draw.rect(screen, rectangle.colour, (rectangle.x, rectangle.y, rectangle.width, rectangle.height))
+        pygame.draw.rect(screen, triangle.colour, (triangle.x, triangle.y, triangle.width, triangle.height))
+        pygame.draw.circle(screen, (0, 255, 0), (100, 100), 50)
+
         # ----- UPDATE
         pygame.display.flip()
         clock.tick(60)
